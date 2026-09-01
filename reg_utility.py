@@ -1,7 +1,7 @@
 #Dependency
 import os
 from dotenv import load_dotenv
-from langchain_community.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader, UnstructuredPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -26,7 +26,7 @@ llm = ChatGoogleGenerativeAI(
 #Document injection function
 def process_document_to_chroma_db(file_name):
     #Load the PDF document using UnstructuredPDFLoader
-    loader = PyMuPDFLoader(f"{working_dir}/{file_name}")
+    loader = UnstructuredPDFLoader(f"{working_dir}/{file_name}")
     documents = loader.load()
 
     #Split the text into chunks for emberdding
