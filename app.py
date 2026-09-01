@@ -6,7 +6,7 @@ from reg_utility import process_document_to_chroma_db, answer_question
 #Set the working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-st.title("✦ 📄 Document Question Answering 📄 ✦")
+st.title("✦ 📄 GenAI Question Answering ✦")
 
 #file uploader widget
 uploaded_file = st.file_uploader("Upload your PDF Document", type="pdf")
