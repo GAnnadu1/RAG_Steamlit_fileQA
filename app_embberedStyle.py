@@ -5,7 +5,7 @@ from reg_utility import process_document_to_chroma_db, answer_question
 # Set the working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-
+st.set_page_config(layout="wide")
 
 st.title("✦ 📄 GenAI Question Answering ✦")
 
