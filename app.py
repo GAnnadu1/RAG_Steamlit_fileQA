@@ -27,9 +27,10 @@ if uploaded_file is not None:
 # Question input
 user_question = st.text_area("Ask a question about the document:")
 
-if st.button("Answer"):
-    
-    answer = answer_question(user_question)
-
-    st.markdown("### GenAI Response")
-    st.markdown(answer)
+if user_question:
+    if 'db' not in st.session_state:
+        st.error("Please upload and process a document first.")
+    else:
+        st.write("Generating response...")
+        response = answer_question(user_question)
+        st.write(response)
