@@ -1,5 +1,3 @@
-%%writefile app_new_faiss.py
-
 import os
 import streamlit as st
 from dotenv import load_dotenv
