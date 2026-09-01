@@ -9,6 +9,9 @@ langchain-huggingface
 langchain-text-splitters
 langchain-chroma
 langchain_google_genai
+unstructured
+unstructured[pdf]
+langchain_unstructured
 
 chromadb
 pymupdf
