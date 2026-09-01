@@ -18,10 +18,7 @@ working_dir = os.path.dirname(os.path.abspath(__file__))
 embedding = HuggingFaceEmbeddings()
 
 #Load llm
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash", 
-    temperature=0
-)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", temperature=0)
 
 #Document injection function
 def process_document_to_chroma_db(file_name):
