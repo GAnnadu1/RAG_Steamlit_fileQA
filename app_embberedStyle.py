@@ -5,15 +5,7 @@ from reg_utility import process_document_to_chroma_db, answer_question
 # Set the working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-st.set_page_config(layout="wide")
 
-# Function to load CSS
-def load_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-# Load the custom CSS
-load_css(os.path.join(working_dir, "style.css"))
 
 st.title("✦ 📄 GenAI Question Answering ✦")
 
