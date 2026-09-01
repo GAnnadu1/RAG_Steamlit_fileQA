@@ -12,6 +12,14 @@ from langchain_classic.chains import RetrievalQA
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
+# Function to load CSS
+def load_css(css_path):
+    with open(css_path) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Load the custom CSS
+load_css(os.path.join(working_dir, "style.css"))
+
 # Set Streamlit page config
 st.set_page_config(layout="wide", page_title="FAISS RAG App")
 st.title("🚀 RAG with FAISS Vector Store 🚀")
