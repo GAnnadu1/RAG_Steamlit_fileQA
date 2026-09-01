@@ -15,11 +15,11 @@ load_dotenv()
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 #Load the embedding model
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embedding = HuggingFaceEmbeddings()
 
 #Load llm
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash", 
     temperature=0
 )
 
@@ -39,7 +39,7 @@ def process_document_to_chroma_db(file_name):
     #Store the document chunks in a Chroma vector database
     vectordb = Chroma.from_documents(
         documents=texts, 
-        embedding=embeddings, 
+        embedding=embedding, 
         persist_directory=f"{working_dir}/doc_vectorstore"
     )
     return 0
@@ -50,7 +50,7 @@ def answer_question(user_question):
   #Load the persistant Chroma vector database
   vectordb = Chroma(
       persist_directory=f"{working_dir}/doc_vectorstore", 
-      embedding_function=embeddings
+      embedding_function=embedding
   )
   
   #Create a retriever for document search
