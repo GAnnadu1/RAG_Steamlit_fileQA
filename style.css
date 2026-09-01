@@ -16,7 +16,7 @@
 
 /* Increase general font size */
 html, body, [class*="st-"] {
-    font-family: 'Verdana', sans-serif;
+    /*font-family: 'Verdana', sans-serif;*/
     font-size: 18px;
 }
 
