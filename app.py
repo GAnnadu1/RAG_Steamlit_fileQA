@@ -25,7 +25,7 @@ if uploaded_file is not None:
     st.info("Document processing Successfully.")
 
 # Question input
-user_question = st.text_input("Ask a question about the document:")
+user_question = st.text_area("Ask a question about the document:")
 
 if st.button("Answer"):
     
