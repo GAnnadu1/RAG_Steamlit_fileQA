@@ -17,6 +17,8 @@ def load_css(css_path):
     with open(css_path) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
+working_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Load the custom CSS
 load_css(os.path.join(working_dir, "style.css"))
 
