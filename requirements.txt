@@ -13,6 +13,7 @@ unstructured
 unstructured[pdf]
 langchain_unstructured
 
+faiss-cpu
 chromadb
 pymupdf
 opencv-python-headless
