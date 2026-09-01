@@ -58,8 +58,13 @@ def answer_question(user_question):
       llm=llm,
       chain_type="stuff",
       retriever=retriever,
+      return_source_documents=True # Added to return source documents
   )
   response = qa_chain.invoke({"query": user_question})
   answer = response["result"]
+    
+  # Extract source file names  
+  source_documents = response["source_documents"]
+  source_names = list(set([os.path.basename(doc.metadata['source']) for doc in source_documents]))
 
-  return answer
+  return answer, source_names # Return both answer and source names
