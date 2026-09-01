@@ -39,7 +39,7 @@ def process_document_to_chroma_db(file_name):
         embedding=embeddings, 
         persist_directory=f"{working_dir}/doc_vectorstore"
     )
-    vectordb.persist()
+    return 0
 
 
 #Doucment Question and answering function
