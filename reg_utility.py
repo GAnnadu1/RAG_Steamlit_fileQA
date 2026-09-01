@@ -22,7 +22,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", temperature=0)
 
 #Document injection function
 def process_document_to_chroma_db(file_name):
-    #Load the PDF document using UnstructuredPDFLoader
+    #Load the PDF document using PyMuPDFLoader
     loader = PyMuPDFLoader(f"{working_dir}/{file_name}")
     documents = loader.load()
 
