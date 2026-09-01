@@ -6,7 +6,7 @@ from reg_utility import process_document_to_chroma_db, answer_question
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Function to load CSS
-def load_css(css_path)):
+def load_css(css_path):
     with open(css_path) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
