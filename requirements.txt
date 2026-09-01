@@ -11,3 +11,4 @@ unstructured[pdf]
 langchain-unstructured
 langchain-chroma
 langchain_google_genai
+opencv-python
