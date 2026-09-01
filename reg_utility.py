@@ -1,7 +1,7 @@
 #Dependency
 import os
 from dotenv import load_dotenv
-from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -10,7 +10,6 @@ from langchain_classic.chains import RetrievalQA
 
 #Load environment variables from .env file
 load_dotenv()
-API_KEY = os.getenv('GEMINI_API_KEY')
 
 #Add Directory 
 working_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,7 +23,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
 #Document injection function
 def process_document_to_chroma_db(file_name):
     #Load the PDF document using UnstructuredPDFLoader
-    loader = UnstructuredPDFLoader(f"{working_dir}/{file_name}")
+    loader = PyMuPDFLoader(f"{working_dir}/{file_name}")
     documents = loader.load()
 
     #Split the text into chunks for emberdding
@@ -40,7 +39,7 @@ def process_document_to_chroma_db(file_name):
         embedding=embeddings, 
         persist_directory=f"{working_dir}/doc_vectorstore"
     )
-    return 0
+    vectordb.persist()
 
 
 #Doucment Question and answering function
