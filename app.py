@@ -29,7 +29,9 @@ user_question = st.text_area("Ask a question about the document:")
 
 if st.button("Answer"):
     
-    answer = answer_question(user_question)
+    #answer = answer_question(user_question)
+    answer, sources = answer_question(user_question) # Modified to get sources
 
     st.markdown("### GenAI Response")
     st.markdown(answer)
+    st.info(f"Response generated successfully from source: {', '.join(sources)}.") # Modified to display sources
