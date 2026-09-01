@@ -12,3 +12,4 @@ langchain_google_genai
 
 chromadb
 pymupdf
+opencv-python-headless
