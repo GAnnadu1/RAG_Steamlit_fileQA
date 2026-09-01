@@ -19,8 +19,7 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 
 #Load llm
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash", 
-    google_api_key=API_KEY, 
+    model="gemini-2.5-flash",
     temperature=0
 )
 
