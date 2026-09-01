@@ -1,0 +1,40 @@
+/* style.css */
+
+.stButton>button {
+    background-color: #FF5733; /* Orange button */
+    color: white;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #C70039;
+}
+
+.stButton>button:hover {
+    background-color: #C70039;
+    border-color: #FF5733;
+}
+
+/* Increase general font size */
+html, body, [class*="st-"] {
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    color: #1a5276;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px #cccccc;
+}
+
+h3 {
+    color: #2874a6;
+    font-size: 2em;
+}
+
+/* Custom style for text area */
+.stTextArea>div>div>textarea {
+    border: 2px solid #aeb6bf;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
